@@ -11,6 +11,7 @@ class Post(models.Model):
 
   title = models.CharField( verbose_name='Titulo del posteo' , max_length=100)
   content = models.TextField(verbose_name='Texto del posteo',null=True, blank= True, default='texto de prueba')
+  # User es una tabla cuando estamos usando ForeingKey
   autor=models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Autor del posteo')
   created_at= models.DateTimeField(auto_now=True, verbose_name='Horario del posteo' )
   tzone=models.CharField(choices=TZ, verbose_name='Zona horaria')
